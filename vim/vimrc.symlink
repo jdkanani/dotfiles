@@ -1,0 +1,157 @@
+" Title : Update window title
+set title
+
+" Ignore case : Ignore case during search
+set ic
+
+" Show number : Show line number
+set nu
+
+" Syntax
+syntax on
+
+" Auto smart code indent
+set autoindent
+filetype plugin indent on
+set smartindent
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set shiftround
+set backspace=indent,eol,start
+
+" Modeline
+set modeline
+set modelines=4
+
+" Noerrorbells : silent
+set noerrorbells
+
+" Highlightsearch : Highlight word during search
+set hls
+
+" Incremental search
+set incsearch
+
+" Show cmd
+set ruler
+set showcmd
+
+" No backup
+set nobackup
+set noswapfile
+
+" Color column
+set colorcolumn=80
+
+" --------------------------------------------------
+" Plugins
+" --------------------------------------------------
+
+" Pathogen
+" https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+
+" Solarized colorscheme
+" Gvim look and feel preferences
+" https://github.com/altercation/vim-colors-solarized
+set background=dark
+if has('gui_running')
+    colors solarized
+endif
+
+" NERDTree
+" https://github.com/scrooloose/nerdtree
+map <F2> <ESC>:NERDTreeToggle<RETURN>
+
+" Vim-Airline
+" https://github.com/bling/vim-airline
+set encoding=utf-8
+set t_Co=256
+set laststatus=2
+set guifont=Source\ Code\ Pro\ for\ Powerline
+let g:airline_powerline_fonts=1
+
+" Snipmate.vim
+" https://github.com/msanders/snipmate.vim
+
+" Vim-Fugitive
+" https://github.com/tpope/vim-fugitive
+
+" Syntactic
+" https://github.com/scrooloose/syntastic
+
+" CtrlP
+" https://github.com/kien/ctrlp.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" --------------------------------------------------
+" Key Maps
+" --------------------------------------------------
+
+" set mapleader
+let mapleader=","
+
+" Disable default navigation keys
+" All mode: <Up>, <Down>, <Left>, <Right>
+nmap <Up>    <nop>
+nmap <Down>  <nop>
+nmap <Left>  <nop>
+nmap <Right> <nop>
+
+" Navigation keys
+" Command mode: <c-h>, <c-j>, <c-k>, <c-l>
+cnoremap <c-h> <Left>
+cnoremap <c-j> <Down>
+cnoremap <c-k> <Up>
+cnoremap <c-l> <Right>
+
+" Save
+" Normal/Insert mode: <c-s>
+nmap <c-s> <esc>:w<cr>
+imap <c-s> <esc>:w<cr>
+
+" Some useful maps
+" Insert mode: <c-a>
+imap <c-a> <esc>A
+
+" Set file type for markdown
+augroup filetype_markdown
+    autocmd!
+    autocmd BufNewFile,BufRead *.md,*.mkd :set filetype=markdown
+augroup END
+
+" Opens an edit command with path of currently edited file filled in
+" Normal mode: <leader>e
+nmap <leader>e :e <c-r>=expand("%:p:h") . "/" <cr>
+
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <leader>te
+nmap <leader>te :tabe <c-r>=expand("%:p:h") . "/" <cr>
+
+" Strip trailing whitespace
+" Normal mode: <leader>ss
+function! StripWhitespace()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    :%s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfunction
+noremap <leader>ss :call StripWhitespace()<cr>
+
+" Spelling checker
+" set dictionary=/usr/share/dict/words
+if has("spell")
+    " Toggle spelling with <F4> key
+    map <F4> :set spell!<cr>
+endif
+
+" Insert closing braces
+inoremap ( ()<esc>i
+inoremap [ []<esc>i
+inoremap { {}<esc>i
+inoremap < <><esc>i
