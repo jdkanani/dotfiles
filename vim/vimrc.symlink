@@ -65,6 +65,7 @@ endif
 " NERDTree
 " https://github.com/scrooloose/nerdtree
 map <F2> <ESC>:NERDTreeToggle<RETURN>
+let NERDTreeIgnore = ['\.pyc$','^__pycache__$','\.so$','\.class$','\.zip$']
 
 " Vim-Airline
 " https://github.com/bling/vim-airline
