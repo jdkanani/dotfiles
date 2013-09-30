@@ -118,6 +118,14 @@ imap <c-s> <esc>:w<cr>
 " Some useful maps
 " Insert mode: <c-a>
 imap <c-a> <esc>A
+" Insert closing braces
+imap ( ()<esc>i
+imap [ []<esc>i
+imap { {}<esc>i
+imap < <><esc>i
+
+" Leader maps
+nmap <leader>bd :bd!<cr>
 
 " Set file type for markdown
 augroup filetype_markdown
@@ -150,9 +158,3 @@ if has("spell")
     " Toggle spelling with <F4> key
     map <F4> :set spell!<cr>
 endif
-
-" Insert closing braces
-inoremap ( ()<esc>i
-inoremap [ []<esc>i
-inoremap { {}<esc>i
-inoremap < <><esc>i
