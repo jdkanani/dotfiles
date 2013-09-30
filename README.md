@@ -22,9 +22,3 @@ $ cd dotfiles
     $ cd tmux
     $ln -s $PWD/tmux.conf ~/.tmux.conf
     ````
-
-3. mutt
-    ````sh
-    $ cd dotfiles/mutt
-    $ bash setup.sh
-    ````
