@@ -116,6 +116,8 @@ nmap <c-s> <esc>:w<cr>
 imap <c-s> <esc>:w<cr>
 
 " Some useful maps
+" Insert mode: jk
+imap jk <esc>
 " Insert mode: <c-a>
 imap <c-a> <esc>A
 " Insert closing braces
@@ -123,6 +125,8 @@ imap ( ()<esc>i
 imap [ []<esc>i
 imap { {}<esc>i
 imap < <><esc>i
+" Normal mode: <cr>
+nmap <cr> :
 
 " Leader maps
 nmap <leader>bd :bd!<cr>
