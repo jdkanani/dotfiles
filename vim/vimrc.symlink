@@ -86,7 +86,7 @@ let g:airline_powerline_fonts=1
 
 " CtrlP
 " https://github.com/kien/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.pyc
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " --------------------------------------------------
