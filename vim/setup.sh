@@ -58,6 +58,9 @@ git_update "https://github.com/kien/ctrlp.vim" "ctrlp.vim"
 # syntastic
 git_update "https://github.com/scrooloose/syntastic" "syntastic"
 
+# vim-easymotion
+git_update "https://github.com/Lokaltog/vim-easymotion" "vim-easymotion"
+
 # Source code font
 echo Downloading sauce code powerline fonts...
 mkdir -p $FONTS
