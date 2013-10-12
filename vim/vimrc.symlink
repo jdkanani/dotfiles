@@ -121,10 +121,10 @@ imap jk <esc>
 " Insert mode: <c-a>
 imap <c-a> <esc>A
 " Insert closing braces
-imap ( ()<esc>i
-imap [ []<esc>i
-imap { {}<esc>i
-imap < <><esc>i
+imap ( ()<left>
+imap [ []<left>
+imap { {}<left>
+autocmd filetype html,xml imap < <><left>
 " Normal mode: <cr>
 nmap <cr> :
 
