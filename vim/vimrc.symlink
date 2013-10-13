@@ -125,8 +125,6 @@ imap ( ()<left>
 imap [ []<left>
 imap { {}<left>
 autocmd filetype html,xml imap < <><left>
-" Normal mode: <cr>
-nmap <cr> :
 
 " Leader maps
 nmap <leader>bd :bd!<cr>
