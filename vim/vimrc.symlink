@@ -128,6 +128,7 @@ autocmd filetype html,xml imap < <><left>
 
 " Leader maps
 nmap <leader>bd :bd!<cr>
+nmap <leader>c :cd ~/
 
 " Set file type for markdown
 augroup filetype_markdown
