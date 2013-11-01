@@ -118,13 +118,6 @@ imap <c-s> <esc>:w<cr>
 " Some useful maps
 " Insert mode: jk
 imap jk <esc>
-" Insert mode: <c-a>
-imap <c-a> <esc>A
-" Insert closing braces
-imap ( ()<left>
-imap [ []<left>
-imap { {}<left>
-autocmd filetype html,xml imap < <><left>
 
 " Leader maps
 nmap <leader>bd :bd!<cr>
