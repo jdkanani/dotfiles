@@ -65,7 +65,7 @@ endif
 " NERDTree
 " https://github.com/scrooloose/nerdtree
 map <F2> <ESC>:NERDTreeToggle<RETURN>
-let NERDTreeIgnore = ['\.pyc$','^__pycache__$','\.so$','\.class$','\.zip$']
+let NERDTreeIgnore = ['\.pyc$','^__pycache__$','\.so$','\.class$','\.zip$','^node_modules$']
 
 " Vim-Airline
 " https://github.com/bling/vim-airline
@@ -86,8 +86,8 @@ let g:airline_powerline_fonts=1
 
 " CtrlP
 " https://github.com/kien/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.pyc
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.class,*.pyc
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 
 " --------------------------------------------------
 " Key Maps
