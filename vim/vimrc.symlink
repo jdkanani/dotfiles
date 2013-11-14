@@ -119,15 +119,21 @@ imap <c-s> <esc>:w<cr>
 " Insert mode: jk
 imap jk <esc>
 
+"
 " Leader maps
+"
+
+" Buffer navigation
 nmap <leader>bd :bd!<cr>
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
 nmap <leader>c :cd ~/
 
 " Set file types
 augroup filetype_all
     autocmd!
     autocmd BufNewFile,BufRead *.md,*.mkd :set filetype=markdown
-    autocmd BufNewFile,BufRead *.go :set filetype=go
+    autocmd filetype go map <leader>f :Fmt<cr>
 augroup END
 
 " Opens an edit command with path of currently edited file filled in

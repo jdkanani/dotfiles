@@ -62,8 +62,8 @@ git_update "https://github.com/scrooloose/syntastic" "syntastic"
 # vim-easymotion
 git_update "https://github.com/Lokaltog/vim-easymotion" "vim-easymotion"
 
-# go syntax
-wget http://golang.org/misc/vim/syntax/go.vim?m=text -O $VIMSYNTAX/go.vim
+# vim-golang
+git_update "https://github.com/jnwhiteh/vim-golang" "vim-golang"
 
 # Source code font
 echo Downloading sauce code powerline fonts...
