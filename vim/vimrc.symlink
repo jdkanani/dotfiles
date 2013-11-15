@@ -89,6 +89,10 @@ let g:airline_powerline_fonts=1
 set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.class,*.pyc
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 
+" vim-golang
+" https://github.com/jnwhiteh/vim-golang
+" let g:gofmt_command = "gofmt -tabs=false -tabwidth=4"
+
 " --------------------------------------------------
 " Key Maps
 " --------------------------------------------------
