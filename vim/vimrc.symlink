@@ -55,12 +55,10 @@ set colorcolumn=80
 execute pathogen#infect()
 
 " Solarized colorscheme
-" Gvim look and feel preferences
+" vim look and feel preferences
 " https://github.com/altercation/vim-colors-solarized
 set background=dark
-if has('gui_running')
-    colors solarized
-endif
+colors solarized
 
 " NERDTree
 " https://github.com/scrooloose/nerdtree
