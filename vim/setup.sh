@@ -65,6 +65,9 @@ git_update "https://github.com/Lokaltog/vim-easymotion" "vim-easymotion"
 # vim-golang
 git_update "https://github.com/jnwhiteh/vim-golang" "vim-golang"
 
+# auto-pairs
+git_update "https://github.com/jiangmiao/auto-pairs" "auto-pairs"
+
 # Source code font
 echo Downloading sauce code powerline fonts...
 mkdir -p $FONTS

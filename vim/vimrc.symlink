@@ -95,6 +95,14 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 " https://github.com/jnwhiteh/vim-golang
 " let g:gofmt_command = "gofmt -tabs=false -tabwidth=4"
 
+" auto-pairs
+" https://github.com/jiangmiao/auto-pairs
+let g:AutoPairsShortcutToggle = '<leader>pt'
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<leader>pi'
+let g:AutoPairsShortcutFastWrap = '<leader>pw'
+let g:AutoPairsShortcutJump = '<leader>pj'
+
 " --------------------------------------------------
 " Key Maps
 " --------------------------------------------------
