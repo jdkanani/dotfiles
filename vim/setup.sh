@@ -3,8 +3,10 @@
 
 VIMFILES=~/.vim
 FONTS=~/.fonts
+DIRCOLORS=~/.dircolors
 echo VIMFILES Path: $VIMFILES
 echo FONTS Path: $FONTS
+echo DIRCOLORS Path: $DIRCOLORS
 
 # Private variables
 VIMAUTOLOAD=$VIMFILES/autoload
@@ -14,7 +16,7 @@ VIMSNIPPETS=$VIMFILES/snippets
 VIMSYNTAX=$VIMFILES/syntax
 
 # Create vimfiles boilerplate
-mkdir -p $VIMAUTOLOAD $VIMBUNDLE $VIMCOLORS $VIMSNIPPETS $VIMSYNTAX
+mkdir -p $VIMAUTOLOAD $VIMBUNDLE $VIMCOLORS $VIMSNIPPETS $VIMSYNTAX $DIRCOLORS
 
 # Copying snippets
 echo Copying snippets...
@@ -67,6 +69,13 @@ git_update "https://github.com/jnwhiteh/vim-golang" "vim-golang"
 
 # auto-pairs
 git_update "https://github.com/jiangmiao/auto-pairs" "auto-pairs"
+
+
+# Solaraized dir-colors
+echo Downloading dircolors dark...
+cd $DIRCOLORS
+wget -N https://raw.github.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
+eval `dircolors $DIRCOLORS`
 
 # Source code font
 echo Downloading sauce code powerline fonts...
