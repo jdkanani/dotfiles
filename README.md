@@ -53,7 +53,9 @@ Dir colors for GNU
 * [dircolors-solarized](https://github.com/seebi/dircolors-solarized)
 
 Some key bindings
-----------------------
+-----------------
+
+vim
 
 -   set `mapleader` to `,`
 -   `jk` as `<esc>`
@@ -66,3 +68,24 @@ Some key bindings
     *   Next buffer - `<leader>bn`
     *   Previous buffer - `<leader>bp`
 -   Strip white spaces with `<leader>ss`
+
+
+tmux
+
+-   set `prefix` to `<ctrl-a>`
+-   vi key navigation bindings
+-   `<space>` or `<prefix>t` - next window
+-   `<backspace>` or `<prefix>T` - previous window
+-   `<prefix>c` - new window
+-   `<prefix>v` - split window horizontally
+-   `<prefix>s` - split window vertically
+-   `<prefix>h` - select left pane
+-   `<prefix>j` - select down pane
+-   `<prefix>k` - select up pane
+-   `<prefix>l` - select right pane
+   
+
+LICENSE
+-------
+
+[MIT](http://opensource.org/licenses/MIT)
