@@ -75,7 +75,7 @@ git_update "https://github.com/jiangmiao/auto-pairs" "auto-pairs"
 echo Downloading dircolors dark...
 cd $DIRCOLORS
 wget -N https://raw.github.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
-eval `dircolors $DIRCOLORS`
+eval `dircolors $DIRCOLORS/dircolors.ansi-dark`
 
 # Source code font
 echo Downloading sauce code powerline fonts...
