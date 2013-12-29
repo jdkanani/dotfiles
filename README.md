@@ -43,7 +43,7 @@ Plugins
 * [Syntastic](https://github.com/scrooloose/syntastic) - syntax checking plugin.
 * [Easy-motion](https://github.com/Lokaltog/vim-easymotion) - simpler way to use some motions.
 * [Golang](https://github.com/jnwhiteh/vim-golang) - configuration for Go language.
- 
+
 Fonts
 
 * source code pro (with [airline](https://github.com/Lokaltog/powerline-fonts) support) [Default]
@@ -67,6 +67,12 @@ vim
     *   Delete buffer -  `<leader>bd`
     *   Next buffer - `<leader>bn`
     *   Previous buffer - `<leader>bp`
+-   Tab
+    *   Insert new tab - `<leader>ti`
+    *   Next tab - `<leader>tn`
+    *   Previous tab - `<leader>tp`
+    *   Tab only - `<leader>to`
+    *   Close tab - `<leader>tc`
 -   Strip white spaces with `<leader>ss`
 
 
@@ -83,7 +89,7 @@ tmux
 -   `<prefix>j` - select down pane
 -   `<prefix>k` - select up pane
 -   `<prefix>l` - select right pane
-   
+
 
 LICENSE
 -------
