@@ -77,7 +77,6 @@ endtry
 
 " NERDTree
 " https://github.com/scrooloose/nerdtree
-map <F2> <ESC>:NERDTreeToggle<RETURN>
 let NERDTreeIgnore = ['\.pyc$','^__pycache__$','\.so$','\.class$','\.zip$','^node_modules$']
 
 " Vim-Airline
@@ -125,9 +124,6 @@ let g:AutoPairsShortcutJump = '<leader>pj'
 " set mapleader
 let mapleader=","
 
-" :w! sudo save the file
-cmap w!! w !sudo tee % > /dev/null
-
 " Disable default navigation keys
 " All mode: <Up>, <Down>, <Left>, <Right>
 nmap <Up>    <nop>
@@ -154,6 +150,18 @@ imap <c-s> <esc>:w<cr>
 " Some useful maps
 " Insert mode: jk
 imap jk <esc>
+
+" ctags
+" Generate ctags recursively for current directory
+map <F12> <ESC>:!ctags -R .<RETURN>
+" Search through all ctags using CtrlP
+noremap <leader>st :CtrlPTag<cr>
+
+" :w! sudo save the file
+cmap w!! w !sudo tee % > /dev/null
+
+" Nerd tree toggle
+map <F2> <ESC>:NERDTreeToggle<RETURN>
 
 " Buffer navigation
 nmap <leader>bd :bd!<cr>

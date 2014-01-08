@@ -16,6 +16,7 @@ $ cd dotfiles
     $ cd vim
     $ bash setup.sh
     $ ln -s $PWD/vimrc.symlink ~/.vimrc
+    $ ln -s $PWD/ctags.symlink ~/.ctags
     ````
     This will create symlink for `.vimrc` file in your home directory.
 
@@ -63,6 +64,7 @@ vim
 -   save current file with `<ctrl-s>`
 -   `<F2>` - toggle nerdtree
 -   `<F4>` - toggle spelling checker
+-   `<F12>`- generate ctags for current directory
 -   Buffer
     *   Delete buffer -  `<leader>bd`
     *   Next buffer - `<leader>bn`
@@ -73,6 +75,7 @@ vim
     *   Previous tab - `<leader>tp`
     *   Tab only - `<leader>to`
     *   Close tab - `<leader>tc`
+-   Search ctags - `<leader>st`
 -   Strip white spaces with `<leader>ss`
 
 
