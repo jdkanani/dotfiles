@@ -114,8 +114,8 @@ let g:ctrlp_by_filename = 1
 " auto-pairs
 " https://github.com/jiangmiao/auto-pairs
 let g:AutoPairsShortcutToggle = '<leader>pt'
-let g:AutoPairsFlyMode = 1
-let g:AutoPairsShortcutBackInsert = '<leader>pi'
+" let g:AutoPairsFlyMode = 1
+" let g:AutoPairsShortcutBackInsert = '<leader>pi'
 let g:AutoPairsShortcutFastWrap = '<leader>pw'
 let g:AutoPairsShortcutJump = '<leader>pj'
 
