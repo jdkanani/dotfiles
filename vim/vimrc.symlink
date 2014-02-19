@@ -184,7 +184,9 @@ nmap <leader>c :cd ~/
 augroup filetype_all
     autocmd!
     autocmd BufNewFile,BufRead *.md,*.mkd :set filetype=markdown
-    autocmd filetype go map <leader>f :Fmt<cr>
+    autocmd FileType go map <leader>f :Fmt<cr>
+    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
 " Opens an edit command with path of currently edited file filled in
