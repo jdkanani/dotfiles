@@ -77,7 +77,7 @@ endtry
 
 " NERDTree
 " https://github.com/scrooloose/nerdtree
-let NERDTreeIgnore = ['\.pyc$','^__pycache__$','\.so$','\.class$','\.zip$','^node_modules$']
+let NERDTreeIgnore = ['\.pyc$','^__pycache__$','\.so$','\.class$','\.zip$','^node_modules$','^vendor$']
 
 " Vim-Airline
 " https://github.com/bling/vim-airline
@@ -100,9 +100,9 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 " CtrlP
 " https://github.com/kien/ctrlp.vim
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
-let g:ctrlp_user_command = 'find %s -type f'
-let g:ctrlp_by_filename = 1
+let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|idea|node_modules|vendor)$'
+" let g:ctrlp_user_command = 'find %s -type f'
+" let g:ctrlp_by_filename = 1
 
 " vim-easymotion
 " https://github.com/Lokaltog/vim-easymotion
