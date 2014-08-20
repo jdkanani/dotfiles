@@ -208,6 +208,10 @@ if has("spell")
     map <F4> :set spell!<cr>
 endif
 
+" Tabstop change
+nmap <leader>2 :call TabStopChange(2)<cr>
+nmap <leader>4 :call TabStopChange(4)<cr>
+
 " -----------------------------------------------------------------------------
 " Helper functions
 " -----------------------------------------------------------------------------
@@ -218,4 +222,10 @@ function! StripWhitespace()
     :%s/\s\+$//e
     call setpos('.', save_cursor)
     call setreg('/', old_query)
+endfunction
+
+function! TabStopChange(value)
+    execute "set tabstop=".a:value
+    execute "set softtabstop=".a:value
+    execute "set shiftwidth=".a:value
 endfunction
