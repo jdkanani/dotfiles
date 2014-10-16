@@ -64,8 +64,8 @@ git_update "https://github.com/scrooloose/syntastic" "syntastic"
 # vim-easymotion
 git_update "https://github.com/Lokaltog/vim-easymotion" "vim-easymotion"
 
-# vim-golang
-git_update "https://github.com/jnwhiteh/vim-golang" "vim-golang"
+# vim-go
+git_update "https://github.com/fatih/vim-go" "vim-go"
 
 # auto-pairs
 git_update "https://github.com/jiangmiao/auto-pairs" "auto-pairs"
