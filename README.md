@@ -43,7 +43,7 @@ Plugins
 * [Solarized theme](https://github.com/altercation/vim-colors-solarized) for making vim beautiful with dark theme.
 * [Syntastic](https://github.com/scrooloose/syntastic) - syntax checking plugin.
 * [Easy-motion](https://github.com/Lokaltog/vim-easymotion) - simpler way to use some motions.
-* [Golang](https://github.com/jnwhiteh/vim-golang) - configuration for Go language.
+* [vim-go](https://github.com/fatih/vim-go) - configuration for Go language.
 
 Fonts
 
