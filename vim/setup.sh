@@ -70,23 +70,24 @@ git_update "https://github.com/fatih/vim-go" "vim-go"
 # auto-pairs
 git_update "https://github.com/jiangmiao/auto-pairs" "auto-pairs"
 
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # Solaraized dir-colors
+    echo Downloading dircolors dark...
+    cd $DIRCOLORS
+    wget -N https://raw.github.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
+    eval `dircolors $DIRCOLORS/dircolors.ansi-dark`
 
-# Solaraized dir-colors
-echo Downloading dircolors dark...
-cd $DIRCOLORS
-wget -N https://raw.github.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
-eval `dircolors $DIRCOLORS/dircolors.ansi-dark`
-
-# Source code font
-echo Downloading sauce code powerline fonts...
-mkdir -p $FONTS
-cd $FONTS
-wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Regular.otf
-wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Medium.otf
-wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Bold.otf
-wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Semibold.otf
-wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Light.otf
-wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20ExtraLight.otf
-fc-cache -vf $FONTS
+    # Source code font
+    echo Downloading sauce code powerline fonts...
+    mkdir -p $FONTS
+    cd $FONTS
+    wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Regular.otf
+    wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Medium.otf
+    wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Bold.otf
+    wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Semibold.otf
+    wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20Light.otf
+    wget -N https://raw.github.com/Lokaltog/powerline-fonts/master/SourceCodePro/Sauce%20Code%20Powerline%20ExtraLight.otf
+    fc-cache -vf $FONTS
+fi
 
 echo Done.
