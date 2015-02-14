@@ -28,6 +28,7 @@ set modelines=4
 
 " Noerrorbells : silent
 set noerrorbells
+autocmd GUIEnter * set vb t_vb=
 
 " Highlightsearch : Highlight word during search
 set hlsearch
