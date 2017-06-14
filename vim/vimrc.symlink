@@ -1,214 +1,30 @@
-" Title : Update window title
-set title
-
-" Ignore case : Ignore case during search
-set ic
-
-" Show number : Show line number
-set nu
-
-" Syntax
-syntax on
-
-" Auto smart code indent
-set autoindent
-filetype plugin indent on
-set smartindent
-set smarttab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set shiftround
-set backspace=indent,eol,start
-
-" Modeline
-set modeline
-set modelines=4
-
-" Noerrorbells : silent
-set noerrorbells
-autocmd GUIEnter * set vb t_vb=
-
-" Highlightsearch : Highlight word during search
-set hlsearch
-
-" Incremental search
-set incsearch
-
-" Show cmd
-set ruler
-set showcmd
-
-" No backup
-set nobackup
-set noswapfile
-
-" Color column
-set colorcolumn=80
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" Turn reguler expression into magic
-set magic
-
-" Turn on the WiLd menu
-set wildmenu
-
-" Ignore compiled/lib/zip files
-set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.class,*.pyc,*/VENV/*
-
-"------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Plugins
-"------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
-" Pathogen
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" Solarized colorscheme
-" vim look and feel preferences
-" https://github.com/altercation/vim-colors-solarized
-set background=dark
-try
-    colors solarized
-catch
-endtry
+" Plugins will go here in the middle
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'flazz/vim-colorschemes'
+Plug 'posva/vim-vue'
+Plug 'pangloss/vim-javascript'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
-" NERDTree
-" https://github.com/scrooloose/nerdtree
-let NERDTreeIgnore = ['\.pyc$','^__pycache__$','\.so$','\.class$','\.zip$','^node_modules$','^vendor$','^VENV$']
-
-" Vim-Airline
-" https://github.com/bling/vim-airline
-set encoding=utf-8
-set t_Co=256
-set term=xterm-256color
-set termencoding=utf-8
-" always show status line
-set laststatus=2
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-let g:airline_powerline_fonts=1
-
-" Snipmate.vim
-" https://github.com/msanders/snipmate.vim
-
-" Vim-Fugitive
-" https://github.com/tpope/vim-fugitive
-
-" Syntactic
-" https://github.com/scrooloose/syntastic
-let g:syntastic_javascript_checkers = ['jshint']
-
-" CtrlP
-" https://github.com/kien/ctrlp.vim
-let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|idea|node_modules|vendor|VENV)$'
-" let g:ctrlp_user_command = 'find %s -type f'
-" let g:ctrlp_by_filename = 1
-
-" vim-easymotion
-" https://github.com/Lokaltog/vim-easymotion
-
-" auto-pairs
-" https://github.com/jiangmiao/auto-pairs
-let g:AutoPairsShortcutToggle = '<leader>pt'
-" let g:AutoPairsFlyMode = 1
-" let g:AutoPairsShortcutBackInsert = '<leader>pi'
-let g:AutoPairsShortcutFastWrap = '<leader>pw'
-let g:AutoPairsShortcutJump = '<leader>pj'
-
-"------------------------------------------------------------------------------
-" Key Maps
-"------------------------------------------------------------------------------
-
-" set mapleader
-let mapleader=","
-
-" Disable default navigation keys
-" All mode: <Up>, <Down>, <Left>, <Right>
-nmap <Up>    <nop>
-nmap <Down>  <nop>
-nmap <Left>  <nop>
-nmap <Right> <nop>
-
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
-
-" Navigation keys
-" Command mode: <c-h>, <c-j>, <c-k>, <c-l>
-cnoremap <c-h> <Left>
-cnoremap <c-j> <Down>
-cnoremap <c-k> <Up>
-cnoremap <c-l> <Right>
-
-" Save
-" Normal/Insert mode: <c-s>
-nmap <c-s> <esc>:w<cr>
-imap <c-s> <esc>:w<cr>
-
-" Some useful maps
-" Insert mode: jk
-imap jk <esc>
-
-" ctags
-" Generate ctags recursively for current directory
-map <F12> <ESC>:!ctags -R .<RETURN>
-" Search through all ctags using CtrlP
-noremap <leader>st :CtrlPTag<cr>
-
-" :w! sudo save the file
-cmap w!! w !sudo tee % > /dev/null
-
-" Nerd tree toggle
-map <F2> <ESC>:NERDTreeToggle<RETURN>
-
-" Buffer navigation
-nmap <leader>bd :bd!<cr>
-nmap <leader>bn :bn<cr>
-nmap <leader>bp :bp<cr>
-
-" Tab navigation
-map <leader>ti :tabnew<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-
-" cd to home
-nmap <leader>c :cd ~/
-
-" Set file types
-augroup filetype_all
-    autocmd!
-    autocmd BufNewFile,BufRead *.md,*.mkd :set filetype=markdown
-    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-augroup END
-
-" Opens an edit command with path of currently edited file filled in
-" Normal mode: <leader>e
-nmap <leader>e :e <c-r>=expand("%:p:h") . "/" <cr>
-
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <leader>te
-nmap <leader>te :tabe <c-r>=expand("%:p:h") . "/" <cr>
-
-" Strip trailing whitespace
-" Normal mode: <leader>ss
-noremap <leader>ss :call StripWhitespace()<cr>
-
-" Spelling checker
-" set dictionary=/usr/share/dict/words
-if has("spell")
-    " Toggle spelling with <F4> key
-    map <F4> :set spell!<cr>
-endif
-
-" Tabstop change
-nmap <leader>2 :call TabStopChange(2)<cr>
-nmap <leader>4 :call TabStopChange(4)<cr>
+call plug#end()
 
 " -----------------------------------------------------------------------------
 " Helper functions
@@ -227,3 +43,152 @@ function! TabStopChange(value)
     execute "set softtabstop=".a:value
     execute "set shiftwidth=".a:value
 endfunction
+
+" -----------------------------------------------------------------------------
+" Config
+" -----------------------------------------------------------------------------
+
+" Map the leader key to ,
+let mapleader=","
+
+set showcmd             " Show (partial) command in status line.
+set showmatch           " Show matching brackets.
+set showmode            " Show current mode.
+set ruler               " Show the line and column numbers of the cursor.
+set number              " Show the line numbers on the left side.
+set formatoptions+=o    " Continue comment marker in new lines.
+set textwidth=0         " Hard-wrap long lines as you type them.
+set expandtab           " Insert spaces when TAB is pressed.
+set tabstop=2           " Render TABs using this many spaces.
+set shiftwidth=2        " Indentation amount for < and > commands.
+set mouse=a             " Enable mouse
+set display+=lastline
+
+set noerrorbells        " No beeps.
+set modeline            " Enable modeline.
+set linespace=0         " Set line-spacing to minimum.
+set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
+
+" More natural splits
+set splitbelow          " Horizontal split below current.
+set splitright          " Vertical split to right of current.
+
+if !&scrolloff
+  set scrolloff=3       " Show next 3 lines while scrolling.
+endif
+if !&sidescrolloff
+  set sidescrolloff=5   " Show next 5 columns while side-scrolling.
+endif
+set nostartofline       " Do not jump to first character with page commands.
+
+set ignorecase          " Make searching case insensitive
+set smartcase           " ... unless the query has capital letters.
+set gdefault            " Use 'g' flag by default with :s/foo/bar/.
+set magic               " Use 'magic' patterns (extended regular expressions).
+
+" map the keys 'jk' to the Escape key to improve efficiency.
+imap jk <Esc>
+
+" Disable default navigation keys
+" All mode: <Up>, <Down>, <Left>, <Right>
+nmap <Up>    <nop>
+nmap <Down>  <nop>
+nmap <Left>  <nop>
+nmap <Right> <nop>
+
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
+
+" Buffer navigation
+nmap <leader>bd :bd!<cr>
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
+
+" Tab navigation
+map <leader>ti :tabnew<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+
+" cd to home
+nmap <leader>c :cd ~/
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+" Search and Replace
+nmap <Leader>s :%s//g<Left><Left>
+
+" Use ; for commands
+" nnoremap ; :
+" Use Q to execute default register
+nnoremap Q @q
+
+
+" Tabstop change
+nmap <leader>2 :call TabStopChange(2)<cr>
+nmap <leader>4 :call TabStopChange(4)<cr>
+
+" Strip trailing whitespace
+" Normal mode: <leader>ss
+noremap <leader>ss :call StripWhitespace()<cr>
+
+" Opens an edit command with path of currently edited file filled in
+" Normal mode: <leader>e
+nmap <leader>e :e <c-r>=expand("%:p:h") . "/" <cr>
+
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <leader>te
+nmap <leader>te :tabe <c-r>=expand("%:p:h") . "/" <cr>
+
+" cd to home
+nmap <leader>c :cd ~/
+
+" Save
+" Normal/Insert mode: <c-s>
+nmap <c-s> <esc>:w<cr>
+imap <c-s> <esc>:w<cr>
+
+" :w! sudo save the file
+cmap w!! w !sudo tee % > /dev/null
+
+" syntax
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+" colorscheme
+set background=dark
+colorscheme solarized
+
+" Auto pairs
+let g:AutoPairsFlyMode = 1
+
+" File type
+" Vue related syntax bug
+autocmd FileType vue syntax sync fromstart
+
+" Nerd tree
+map <F2> <ESC>:NERDTreeToggle<RETURN>
+let g:NERDTreeAutoDeleteBuffer = 1
+
+" Easy motion
+" n-character search motion
+map <leader><leader>/ <Plug>(easymotion-sn)
+" smartcase
+let g:EasyMotion_smartcase = 1
+
+" FZF setup
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ag -g "" | ctags -L -'
+
+" map file search fzf
+nmap <C-p> :Files<cr>
