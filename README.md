@@ -27,6 +27,12 @@ $ cd dotfiles
     ````
     Then proceed to [customize](https://github.com/gpakosz/.tmux#enabling-the-powerline-look) your ~/.tmux.conf.local copy.
 
+3. [ctags](http://ctags.sourceforge.net/) configuration
+    ````sh
+    $ cd ctags
+    $ ln -s $PWD/ctags ~/.ctags
+    ````
+
 LICENSE
 -------
 
