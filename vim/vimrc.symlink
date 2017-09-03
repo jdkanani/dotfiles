@@ -189,6 +189,8 @@ let g:EasyMotion_smartcase = 1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ag -g "" | ctags -L -'
+" Update tags command
+command UpdateTags execute "!" . g:fzf_tags_command
 
 " map file search fzf
 nmap <C-p> :Files<cr>
