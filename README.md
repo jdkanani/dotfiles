@@ -33,6 +33,13 @@ $ cd dotfiles
     $ ln -s $PWD/ctags ~/.ctags
     ````
 
+4. [fish](http://fishshell.com/) configuration
+    ````sh
+    $ cd fish
+    $ ln -s $PWD/config.fish ~/.config/fish/config.fish
+    $ fish_config
+    ````
+
 LICENSE
 -------
 
