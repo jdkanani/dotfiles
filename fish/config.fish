@@ -1,3 +1,7 @@
+function fish_greeting
+  fortune -a
+end
+
 # aliases
 alias mux "tmuxinator"
 
