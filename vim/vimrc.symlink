@@ -23,6 +23,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug 'octref/RootIgnore'
 
 call plug#end()
 
@@ -178,6 +179,7 @@ autocmd FileType vue syntax sync fromstart
 " Nerd tree
 map <F2> <ESC>:NERDTreeToggle<RETURN>
 let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeRespectWildIgnore = 1
 
 " Easy motion
 " n-character search motion
@@ -190,7 +192,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ag -g "" | ctags -L -'
 " Update tags command
-command UpdateTags execute "!" . g:fzf_tags_command
+command! UpdateTags execute "!" . g:fzf_tags_command
 
 " map file search fzf
 nmap <C-p> :Files<cr>
