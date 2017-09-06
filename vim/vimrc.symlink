@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
-Plug 'flazz/vim-colorschemes'
+Plug 'altercation/vim-colors-solarized'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
