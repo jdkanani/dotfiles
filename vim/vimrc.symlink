@@ -24,6 +24,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'octref/RootIgnore'
+Plug 'tomlion/vim-solidity'
 
 call plug#end()
 
