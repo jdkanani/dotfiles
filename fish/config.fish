@@ -12,8 +12,9 @@ set -x EDITOR nvim
 set -x GPG_TTY (tty)
 
 # Node path
-set PATH $HOME/node_modules/.bin/ $HOME/.bin $PATH
+set PATH /usr/local/bin $HOME/.bin $PATH
 
 # Setting ag as the default source for fzf
 set -x FZF_DEFAULT_COMMAND 'ag -g ""'
 set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+rvm default
