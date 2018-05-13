@@ -198,3 +198,6 @@ command! UpdateTags execute "!" . g:fzf_tags_command
 
 " map file search fzf
 nmap <C-p> :Files<cr>
+
+" Font size
+set guifont=Source\ Code\ Pro:h14
