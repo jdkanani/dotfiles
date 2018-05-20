@@ -69,7 +69,7 @@ set display+=lastline
 
 set noerrorbells        " No beeps.
 set modeline            " Enable modeline.
-set linespace=0         " Set line-spacing to minimum.
+set linespace=3         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 
 " More natural splits
