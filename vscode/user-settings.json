@@ -1,0 +1,32 @@
+{
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.fontFamily": "Source Code Pro",
+    "editor.fontSize": 14,
+    "eslint.run": "onSave",
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "html",
+            "autoFix": true
+        }
+    ],
+    "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+    // solidity
+    "solidity.linter": null,
+    // stop eslint
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true,
+    "editor.tabSize": 2,
+    "window.zoomLevel": 0,
+    "eslint.enable": false,
+    "files.associations": {
+        "*.slb": "solidity"
+    }
+}
